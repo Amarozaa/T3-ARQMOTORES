@@ -52,11 +52,23 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VFX")
 	UNiagaraSystem* ExplosionEffect;
 
+	// Daño que inflige el proyectil
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float AttackDamage;
+
+	//Distancia maxima que puede recorrer el proyectil
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float Range;
+
+	FVector InitialLocation;
+
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 		UPrimitiveComponent* OtherComp, FVector NormalImpulse,
 		const FHitResult& Hit);
 
+	UFUNCTION()
+	void Explode();
 
 
 

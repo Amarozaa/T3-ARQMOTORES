@@ -25,6 +25,10 @@ ABasedeProjectile::ABasedeProjectile()
     ProjectileMovement->bRotationFollowsVelocity = true;
     ProjectileMovement->ProjectileGravityScale = 0.f;
 
+	//Stats iniciales
+    Range = 500.f;
+    AttackDamage = 1.f;
+
 
     NiagaraComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraComp"));
     NiagaraComp->SetupAttachment(RootComponent);
@@ -36,6 +40,8 @@ ABasedeProjectile::ABasedeProjectile()
 void ABasedeProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+
+	InitialLocation = GetActorLocation();
 
     if (NiagaraEffect)
     {
@@ -50,6 +56,19 @@ void ABasedeProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// Se revisa que el proyectil no recorra una distancia mayor a la especificada
+	float DistanceTraveled = FVector::Dist(InitialLocation, GetActorLocation());
+    if (DistanceTraveled >= Range)
+    {
+        Explode();
+    }
+    
+    // Actualizar la posición de la partícula
+    if (NiagaraComp && NiagaraEffect)
+    {
+        NiagaraComp->SetWorldLocation(GetActorLocation());
+        NiagaraComp->SetWorldRotation(GetActorRotation());
+	}
 }
 
 void ABasedeProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
@@ -58,8 +77,11 @@ void ABasedeProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 {
     GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("miau"));
 
+    Explode();
+}
 
-
+void ABasedeProjectile::Explode()
+{
     if (ExplosionEffect)
     {
         UNiagaraFunctionLibrary::SpawnSystemAtLocation(
@@ -69,7 +91,6 @@ void ABasedeProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
             GetActorRotation() // o simplemente FRotator::ZeroRotator
         );
     }
-
     Destroy();
 }
 
