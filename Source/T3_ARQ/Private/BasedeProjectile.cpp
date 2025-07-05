@@ -2,6 +2,7 @@
 
 
 #include "BasedeProjectile.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABasedeProjectile::ABasedeProjectile()
@@ -75,7 +76,26 @@ void ABasedeProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
     UPrimitiveComponent* OtherComp, FVector NormalImpulse,
     const FHitResult& Hit)
 {
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("miau"));
+    FString ClassName = OtherActor->GetClass()->GetName();
+
+    FString Mensaje = FString::Printf(TEXT("Impactaste un actor de clase: %s"), *ClassName);
+
+    //en el futuro tal vez seria mejor asignarle un tag a todos los enemigos, pero por ahora esto cumple.
+
+
+    if (ClassName.Contains("BP_AI"))
+    {
+            UGameplayStatics::ApplyDamage(
+            OtherActor,     // A quién se le hace daño
+            AttackDamage*10,          // Cantidad de daño
+            GetInstigatorController(), // Quién causó el daño (Controller del proyectil, opcional)
+            this,           // El que hizo el daño (el proyectil)
+            UDamageType::StaticClass() // Tipo de daño
+        );
+    }
+
+
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, Mensaje);
 
     Explode();
 }
