@@ -83,7 +83,7 @@ void ABasedeProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
     //en el futuro tal vez seria mejor asignarle un tag a todos los enemigos, pero por ahora esto cumple.
 
 
-    if (ClassName.Contains("BP_AI") || ClassName.Contains("BP_FlyingAI"))
+    if (ClassName.Contains("BP_AI"))
     {
             UGameplayStatics::ApplyDamage(
             OtherActor,     // A quién se le hace daño
