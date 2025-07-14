@@ -41,7 +41,7 @@ void ASpawnZone::SpawnRandomActors()
 	FHitResult Hit;
 
 
-	if (!ChestClass) return;
+	if (!BP_Class) return;
 	FVector Origin = GetActorLocation();
 	FVector Extent = VisualBox->GetScaledBoxExtent(); // ya considera escala
 
@@ -57,12 +57,12 @@ void ASpawnZone::SpawnRandomActors()
 
 		if (bHit)
 		{
-			FVector SpawnLocation = Hit.ImpactPoint + FVector(0, 0, 10); // evitar clipping
+			FVector SpawnLocation = Hit.ImpactPoint + FVector(0, 0, 50); // evitar clipping
 
 			FString Msg = FString::Printf(TEXT("Impact Z: %.2f"), Hit.ImpactPoint.Z);
 			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, Msg);
 
-			World->SpawnActor<AActor>(ChestClass, SpawnLocation, FRotator::ZeroRotator);
+			World->SpawnActor<AActor>(BP_Class, SpawnLocation, FRotator::ZeroRotator);
 
 
 		}

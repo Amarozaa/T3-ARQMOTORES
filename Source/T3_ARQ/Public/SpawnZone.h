@@ -25,9 +25,9 @@ protected:
 
 
 
-	// Clase del cofre a spawnear (único tipo)
+	// Blueprint class a spawnear (único tipo)
 	UPROPERTY(EditAnywhere, Category = "Spawn")
-	TSubclassOf<AActor> ChestClass;
+	TSubclassOf<AActor> BP_Class;
 
 
 	UPROPERTY(EditAnywhere, Category = "Spawn")
@@ -41,6 +41,7 @@ protected:
 	float TraceZEnd = 3000.0f;
 
 	// Función de spawn
+	UFUNCTION(BlueprintCallable)
 	void SpawnRandomActors();
 
 public:
