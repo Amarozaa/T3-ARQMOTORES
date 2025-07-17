@@ -91,5 +91,7 @@ T3_ARQ/
 ├── T3_ARQ.uproject
 └── README.md
 ```
+Creditos:
 
+No olvidarme de agregar creditos de los assets(maguito, esqueleto, vfx) miau
 
