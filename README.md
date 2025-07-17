@@ -13,7 +13,7 @@ Prototipo de roguelike en tercera persona hecho para la tarea 3 del ramo Arquite
 - **Proyectiles:** El jugador puede lanzar hechizos(1) que impactan a los enemigos.
 - **Tipos de enemigos:** Existen 2 tipos de enemigos, aereos y terrestres, cada uno con diferentes mecanicas de ataque.
 - **Oleadas de enemigos:** Los enemigos aparecen en oleadas cada cierto tiempo.
-- **Mejoras:** El jugador puede recoger mejoras que le mejoran estadisticas al jugador(velocidad de ataque, velocidad de movimiento o daño) en cofres que aparecen aleatoriamente en el mapa o al derrotar enemigos con una probabilidad.
+- **Mejoras:** El jugador puede recoger mejoras que le mejoran estadisticas al jugador(velocidad de ataque, velocidad de movimiento o daño) interactuando con cofres que aparecen en el mapa o al derrotar enemigos con cierta probabilidad.
 - **Jefe final:** Aparece un jefe final al cabo de cierto tiempo, el cual debe ser derrotado para completar el nivel.
 
 ## Controles
@@ -44,7 +44,14 @@ T3_ARQ/
 │   │   ├── IMC_Default (Input Mapping Context)
 │   │   └── IMC_MouseLook (Input Mapping Context)
 │   │
-│   ├── LevelPrototyping/ ...(completar)
+│   ├── LevelPrototyping/
+│   │   ├── Decoration/
+│   │   ├── Interactable/
+│   │   ├── Items/
+│   │   ├── Materials/
+│   │   ├── Meshes/
+│   │   ├── SpawnZones/
+│   │   └── Textures/
 │   │
 │   ├── Maps/
 │   │   ├── GameModes/
