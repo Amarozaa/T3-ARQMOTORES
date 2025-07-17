@@ -100,5 +100,7 @@ T3_ARQ/
 ```
 Creditos:
 
-No olvidarme de agregar creditos de los assets(maguito, esqueleto, vfx) miau
+Asset mago by MadTrollStudio: https://sketchfab.com/3d-models/low-poly-mage-rigged-free-10771a1d02a145df95824b483515eeb6
+Asset esqueleto by vinrax: https://sketchfab.com/3d-models/skeleton-character-psx-ece576bbed4b4364911c7596d828a558
+Mixed VFX by G.G.: https://www.fab.com/listings/6518971c-c8ca-47d7-8611-1ff068b78dd5
 
