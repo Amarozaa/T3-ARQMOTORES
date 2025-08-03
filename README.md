@@ -27,7 +27,7 @@ Prototipo de roguelike en tercera persona hecho para la tarea 3 del ramo Arquite
 ## Aspectos tecnicos
 
 - Se posee una clase base proyectil en C++ (BaseDeProjectile.cpp) la cual define la logica general de un proyectill,  de la cual despues hereda el Blueprint BP_MainAttack. Esto facilitaria el crear nuevos proyectiles a futuro simplemente creando Blueprints hijos de la clase base.
-- Tambien se pose una clase en c++ (SpawnZone.cpp) la define un volumen de spawn mediante un UBoxComponent, desde el cual se generan posiciones aleatorias para instanciar actores (Blueprints) en tiempo de juego. Utiliza raycasts verticales para asegurar que los actores se coloquen sobre superficies válidas del entorno, evitando intersecciones. La clase permite ajustar fácilmente el tipo y cantidad de actores a spawnear desde el editor.
+- Tambien se pose una clase en C++ (SpawnZone.cpp) la define un volumen de spawn mediante un UBoxComponent, desde el cual se generan posiciones aleatorias para instanciar actores (Blueprints) en tiempo de juego. Utiliza raycasts verticales para asegurar que los actores se coloquen sobre superficies válidas del entorno, evitando intersecciones. La clase permite ajustar fácilmente el tipo y cantidad de actores a spawnear desde el editor.
 
 ## Estructura del proyecto
 ```
