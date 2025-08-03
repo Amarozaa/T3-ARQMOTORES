@@ -104,7 +104,7 @@ T3_ARQ/
 ├── T3_ARQ.uproject
 └── README.md
 ```
-Creditos:
+## Creditos:
 
 Asset mago by MadTrollStudio: https://sketchfab.com/3d-models/low-poly-mage-rigged-free-10771a1d02a145df95824b483515eeb6
 
