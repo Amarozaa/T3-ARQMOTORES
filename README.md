@@ -8,6 +8,17 @@
 
 Prototipo de roguelike en tercera persona hecho para la tarea 3 del ramo Arquitectura de motores de videojuegos CC5512 de la Universidad de Chile, inspirado en *Risk of Rain 2*. El jugador controla a un mago el cual debe de derrotar a enemigos que aparecen en oleadas para obtener mejoras, y eventualmente derrotar a un jefe final que aparece despues de cierto tiempo.
 
+## Screenshots
+
+<img width="1863" height="965" alt="Im1" src="https://github.com/user-attachments/assets/89cf67cb-6e2c-4830-9fce-00e94bd2078a" />
+
+<img width="1737" height="934" alt="Im2" src="https://github.com/user-attachments/assets/8eb2821f-9042-451c-b15e-cc3414427993" />
+
+<img width="1873" height="970" alt="Im3" src="https://github.com/user-attachments/assets/9e074971-3b1b-491d-9c21-f72b8fe6241d" />
+
+
+
+
 ## Mecanicas principales implementadas
 
 - **Proyectiles:** El jugador puede lanzar un hechizo el cual impacta a los enemigos.
